@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CrT-un-oOw">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--The Moview Data Base-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Nav" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,64 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GS5-WI-aAb">
+                                <rect key="frame" x="56" y="252" width="488" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="qaX-IU-HJ3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ufq-ls-vRG"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nb8-to-ihk">
+                                <rect key="frame" x="56" y="317" width="488" height="64"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="searchButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wgh-pg-05W"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nb8-to-ihk" secondAttribute="bottom" constant="219" id="Dr6-xm-1Pd"/>
+                            <constraint firstItem="GS5-WI-aAb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="188" id="QrW-RU-78M"/>
+                            <constraint firstItem="nb8-to-ihk" firstAttribute="top" secondItem="GS5-WI-aAb" secondAttribute="bottom" constant="35" id="axy-DW-XAa"/>
+                            <constraint firstItem="GS5-WI-aAb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="36" id="gcC-Vl-eUP"/>
+                            <constraint firstItem="GS5-WI-aAb" firstAttribute="leading" secondItem="nb8-to-ihk" secondAttribute="leading" id="kO1-YV-Ctn"/>
+                            <constraint firstItem="GS5-WI-aAb" firstAttribute="trailing" secondItem="nb8-to-ihk" secondAttribute="trailing" id="li1-RO-y4g"/>
+                            <constraint firstItem="GS5-WI-aAb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s9L-pd-vlC"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="The Moview Data Base" id="0e5-8K-nAX"/>
+                    <connections>
+                        <outlet property="searchButton" destination="nb8-to-ihk" id="mJs-e7-5dQ"/>
+                        <outlet property="searchTextField" destination="GS5-WI-aAb" id="rSu-jF-VkB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="944" y="-305"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lxC-CS-MpR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CrT-un-oOw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pKl-X8-hHL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="FOI-g6-neq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E0W-50-Xc6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="285" y="-305"/>
         </scene>
     </scenes>
 </document>
