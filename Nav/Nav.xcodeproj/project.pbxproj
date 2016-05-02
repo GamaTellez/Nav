@@ -7,66 +7,64 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		87B3A7451CD6F0AE000DBB70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B3A7441CD6F0AE000DBB70 /* AppDelegate.swift */; };
-		87B3A7471CD6F0AE000DBB70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B3A7461CD6F0AE000DBB70 /* ViewController.swift */; };
-		87B3A74A1CD6F0AE000DBB70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87B3A7481CD6F0AE000DBB70 /* Main.storyboard */; };
-		87B3A74D1CD6F0AE000DBB70 /* Nav.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 87B3A74B1CD6F0AE000DBB70 /* Nav.xcdatamodeld */; };
-		87B3A74F1CD6F0AE000DBB70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87B3A74E1CD6F0AE000DBB70 /* Assets.xcassets */; };
-		87B3A7521CD6F0AE000DBB70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87B3A7501CD6F0AE000DBB70 /* LaunchScreen.storyboard */; };
-		87B3A75D1CD6F0AF000DBB70 /* NavTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B3A75C1CD6F0AF000DBB70 /* NavTests.swift */; };
-		87B3A7681CD6F0AF000DBB70 /* NavUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B3A7671CD6F0AF000DBB70 /* NavUITests.swift */; };
+		870F34221CD6F12200C2B094 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870F34211CD6F12200C2B094 /* AppDelegate.swift */; };
+		870F34241CD6F12200C2B094 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870F34231CD6F12200C2B094 /* ViewController.swift */; };
+		870F34271CD6F12200C2B094 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 870F34251CD6F12200C2B094 /* Main.storyboard */; };
+		870F34291CD6F12200C2B094 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 870F34281CD6F12200C2B094 /* Assets.xcassets */; };
+		870F342C1CD6F12200C2B094 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 870F342A1CD6F12200C2B094 /* LaunchScreen.storyboard */; };
+		870F34371CD6F12200C2B094 /* NavTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870F34361CD6F12200C2B094 /* NavTests.swift */; };
+		870F34421CD6F12200C2B094 /* NavUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870F34411CD6F12200C2B094 /* NavUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		87B3A7591CD6F0AF000DBB70 /* PBXContainerItemProxy */ = {
+		870F34331CD6F12200C2B094 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 87B3A7391CD6F0AE000DBB70 /* Project object */;
+			containerPortal = 870F34161CD6F12200C2B094 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 87B3A7401CD6F0AE000DBB70;
+			remoteGlobalIDString = 870F341D1CD6F12200C2B094;
 			remoteInfo = Nav;
 		};
-		87B3A7641CD6F0AF000DBB70 /* PBXContainerItemProxy */ = {
+		870F343E1CD6F12200C2B094 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 87B3A7391CD6F0AE000DBB70 /* Project object */;
+			containerPortal = 870F34161CD6F12200C2B094 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 87B3A7401CD6F0AE000DBB70;
+			remoteGlobalIDString = 870F341D1CD6F12200C2B094;
 			remoteInfo = Nav;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		87B3A7411CD6F0AE000DBB70 /* Nav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nav.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		87B3A7441CD6F0AE000DBB70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		87B3A7461CD6F0AE000DBB70 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		87B3A7491CD6F0AE000DBB70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		87B3A74C1CD6F0AE000DBB70 /* Nav.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Nav.xcdatamodel; sourceTree = "<group>"; };
-		87B3A74E1CD6F0AE000DBB70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		87B3A7511CD6F0AE000DBB70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		87B3A7531CD6F0AE000DBB70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		87B3A7581CD6F0AF000DBB70 /* NavTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		87B3A75C1CD6F0AF000DBB70 /* NavTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavTests.swift; sourceTree = "<group>"; };
-		87B3A75E1CD6F0AF000DBB70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		87B3A7631CD6F0AF000DBB70 /* NavUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		87B3A7671CD6F0AF000DBB70 /* NavUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavUITests.swift; sourceTree = "<group>"; };
-		87B3A7691CD6F0AF000DBB70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		870F341E1CD6F12200C2B094 /* Nav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nav.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		870F34211CD6F12200C2B094 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		870F34231CD6F12200C2B094 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		870F34261CD6F12200C2B094 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		870F34281CD6F12200C2B094 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		870F342B1CD6F12200C2B094 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		870F342D1CD6F12200C2B094 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		870F34321CD6F12200C2B094 /* NavTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		870F34361CD6F12200C2B094 /* NavTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavTests.swift; sourceTree = "<group>"; };
+		870F34381CD6F12200C2B094 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		870F343D1CD6F12200C2B094 /* NavUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		870F34411CD6F12200C2B094 /* NavUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavUITests.swift; sourceTree = "<group>"; };
+		870F34431CD6F12200C2B094 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		87B3A73E1CD6F0AE000DBB70 /* Frameworks */ = {
+		870F341B1CD6F12200C2B094 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		87B3A7551CD6F0AE000DBB70 /* Frameworks */ = {
+		870F342F1CD6F12200C2B094 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		87B3A7601CD6F0AF000DBB70 /* Frameworks */ = {
+		870F343A1CD6F12200C2B094 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -76,54 +74,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		87B3A7381CD6F0AE000DBB70 = {
+		870F34151CD6F12200C2B094 = {
 			isa = PBXGroup;
 			children = (
-				87B3A7431CD6F0AE000DBB70 /* Nav */,
-				87B3A75B1CD6F0AF000DBB70 /* NavTests */,
-				87B3A7661CD6F0AF000DBB70 /* NavUITests */,
-				87B3A7421CD6F0AE000DBB70 /* Products */,
+				870F34201CD6F12200C2B094 /* Nav */,
+				870F34351CD6F12200C2B094 /* NavTests */,
+				870F34401CD6F12200C2B094 /* NavUITests */,
+				870F341F1CD6F12200C2B094 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		87B3A7421CD6F0AE000DBB70 /* Products */ = {
+		870F341F1CD6F12200C2B094 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				87B3A7411CD6F0AE000DBB70 /* Nav.app */,
-				87B3A7581CD6F0AF000DBB70 /* NavTests.xctest */,
-				87B3A7631CD6F0AF000DBB70 /* NavUITests.xctest */,
+				870F341E1CD6F12200C2B094 /* Nav.app */,
+				870F34321CD6F12200C2B094 /* NavTests.xctest */,
+				870F343D1CD6F12200C2B094 /* NavUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		87B3A7431CD6F0AE000DBB70 /* Nav */ = {
+		870F34201CD6F12200C2B094 /* Nav */ = {
 			isa = PBXGroup;
 			children = (
-				87B3A7441CD6F0AE000DBB70 /* AppDelegate.swift */,
-				87B3A7461CD6F0AE000DBB70 /* ViewController.swift */,
-				87B3A7481CD6F0AE000DBB70 /* Main.storyboard */,
-				87B3A74E1CD6F0AE000DBB70 /* Assets.xcassets */,
-				87B3A7501CD6F0AE000DBB70 /* LaunchScreen.storyboard */,
-				87B3A7531CD6F0AE000DBB70 /* Info.plist */,
-				87B3A74B1CD6F0AE000DBB70 /* Nav.xcdatamodeld */,
+				870F34211CD6F12200C2B094 /* AppDelegate.swift */,
+				870F34231CD6F12200C2B094 /* ViewController.swift */,
+				870F34251CD6F12200C2B094 /* Main.storyboard */,
+				870F34281CD6F12200C2B094 /* Assets.xcassets */,
+				870F342A1CD6F12200C2B094 /* LaunchScreen.storyboard */,
+				870F342D1CD6F12200C2B094 /* Info.plist */,
 			);
 			path = Nav;
 			sourceTree = "<group>";
 		};
-		87B3A75B1CD6F0AF000DBB70 /* NavTests */ = {
+		870F34351CD6F12200C2B094 /* NavTests */ = {
 			isa = PBXGroup;
 			children = (
-				87B3A75C1CD6F0AF000DBB70 /* NavTests.swift */,
-				87B3A75E1CD6F0AF000DBB70 /* Info.plist */,
+				870F34361CD6F12200C2B094 /* NavTests.swift */,
+				870F34381CD6F12200C2B094 /* Info.plist */,
 			);
 			path = NavTests;
 			sourceTree = "<group>";
 		};
-		87B3A7661CD6F0AF000DBB70 /* NavUITests */ = {
+		870F34401CD6F12200C2B094 /* NavUITests */ = {
 			isa = PBXGroup;
 			children = (
-				87B3A7671CD6F0AF000DBB70 /* NavUITests.swift */,
-				87B3A7691CD6F0AF000DBB70 /* Info.plist */,
+				870F34411CD6F12200C2B094 /* NavUITests.swift */,
+				870F34431CD6F12200C2B094 /* Info.plist */,
 			);
 			path = NavUITests;
 			sourceTree = "<group>";
@@ -131,13 +128,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		87B3A7401CD6F0AE000DBB70 /* Nav */ = {
+		870F341D1CD6F12200C2B094 /* Nav */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 87B3A76C1CD6F0AF000DBB70 /* Build configuration list for PBXNativeTarget "Nav" */;
+			buildConfigurationList = 870F34461CD6F12200C2B094 /* Build configuration list for PBXNativeTarget "Nav" */;
 			buildPhases = (
-				87B3A73D1CD6F0AE000DBB70 /* Sources */,
-				87B3A73E1CD6F0AE000DBB70 /* Frameworks */,
-				87B3A73F1CD6F0AE000DBB70 /* Resources */,
+				870F341A1CD6F12200C2B094 /* Sources */,
+				870F341B1CD6F12200C2B094 /* Frameworks */,
+				870F341C1CD6F12200C2B094 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -145,69 +142,69 @@
 			);
 			name = Nav;
 			productName = Nav;
-			productReference = 87B3A7411CD6F0AE000DBB70 /* Nav.app */;
+			productReference = 870F341E1CD6F12200C2B094 /* Nav.app */;
 			productType = "com.apple.product-type.application";
 		};
-		87B3A7571CD6F0AE000DBB70 /* NavTests */ = {
+		870F34311CD6F12200C2B094 /* NavTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 87B3A76F1CD6F0AF000DBB70 /* Build configuration list for PBXNativeTarget "NavTests" */;
+			buildConfigurationList = 870F34491CD6F12200C2B094 /* Build configuration list for PBXNativeTarget "NavTests" */;
 			buildPhases = (
-				87B3A7541CD6F0AE000DBB70 /* Sources */,
-				87B3A7551CD6F0AE000DBB70 /* Frameworks */,
-				87B3A7561CD6F0AE000DBB70 /* Resources */,
+				870F342E1CD6F12200C2B094 /* Sources */,
+				870F342F1CD6F12200C2B094 /* Frameworks */,
+				870F34301CD6F12200C2B094 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				87B3A75A1CD6F0AF000DBB70 /* PBXTargetDependency */,
+				870F34341CD6F12200C2B094 /* PBXTargetDependency */,
 			);
 			name = NavTests;
 			productName = NavTests;
-			productReference = 87B3A7581CD6F0AF000DBB70 /* NavTests.xctest */;
+			productReference = 870F34321CD6F12200C2B094 /* NavTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		87B3A7621CD6F0AF000DBB70 /* NavUITests */ = {
+		870F343C1CD6F12200C2B094 /* NavUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 87B3A7721CD6F0AF000DBB70 /* Build configuration list for PBXNativeTarget "NavUITests" */;
+			buildConfigurationList = 870F344C1CD6F12200C2B094 /* Build configuration list for PBXNativeTarget "NavUITests" */;
 			buildPhases = (
-				87B3A75F1CD6F0AF000DBB70 /* Sources */,
-				87B3A7601CD6F0AF000DBB70 /* Frameworks */,
-				87B3A7611CD6F0AF000DBB70 /* Resources */,
+				870F34391CD6F12200C2B094 /* Sources */,
+				870F343A1CD6F12200C2B094 /* Frameworks */,
+				870F343B1CD6F12200C2B094 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				87B3A7651CD6F0AF000DBB70 /* PBXTargetDependency */,
+				870F343F1CD6F12200C2B094 /* PBXTargetDependency */,
 			);
 			name = NavUITests;
 			productName = NavUITests;
-			productReference = 87B3A7631CD6F0AF000DBB70 /* NavUITests.xctest */;
+			productReference = 870F343D1CD6F12200C2B094 /* NavUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		87B3A7391CD6F0AE000DBB70 /* Project object */ = {
+		870F34161CD6F12200C2B094 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Gamaliel Tellez";
 				TargetAttributes = {
-					87B3A7401CD6F0AE000DBB70 = {
+					870F341D1CD6F12200C2B094 = {
 						CreatedOnToolsVersion = 7.3;
 					};
-					87B3A7571CD6F0AE000DBB70 = {
+					870F34311CD6F12200C2B094 = {
 						CreatedOnToolsVersion = 7.3;
-						TestTargetID = 87B3A7401CD6F0AE000DBB70;
+						TestTargetID = 870F341D1CD6F12200C2B094;
 					};
-					87B3A7621CD6F0AF000DBB70 = {
+					870F343C1CD6F12200C2B094 = {
 						CreatedOnToolsVersion = 7.3;
-						TestTargetID = 87B3A7401CD6F0AE000DBB70;
+						TestTargetID = 870F341D1CD6F12200C2B094;
 					};
 				};
 			};
-			buildConfigurationList = 87B3A73C1CD6F0AE000DBB70 /* Build configuration list for PBXProject "Nav" */;
+			buildConfigurationList = 870F34191CD6F12200C2B094 /* Build configuration list for PBXProject "Nav" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -215,37 +212,37 @@
 				en,
 				Base,
 			);
-			mainGroup = 87B3A7381CD6F0AE000DBB70;
-			productRefGroup = 87B3A7421CD6F0AE000DBB70 /* Products */;
+			mainGroup = 870F34151CD6F12200C2B094;
+			productRefGroup = 870F341F1CD6F12200C2B094 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				87B3A7401CD6F0AE000DBB70 /* Nav */,
-				87B3A7571CD6F0AE000DBB70 /* NavTests */,
-				87B3A7621CD6F0AF000DBB70 /* NavUITests */,
+				870F341D1CD6F12200C2B094 /* Nav */,
+				870F34311CD6F12200C2B094 /* NavTests */,
+				870F343C1CD6F12200C2B094 /* NavUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		87B3A73F1CD6F0AE000DBB70 /* Resources */ = {
+		870F341C1CD6F12200C2B094 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87B3A7521CD6F0AE000DBB70 /* LaunchScreen.storyboard in Resources */,
-				87B3A74F1CD6F0AE000DBB70 /* Assets.xcassets in Resources */,
-				87B3A74A1CD6F0AE000DBB70 /* Main.storyboard in Resources */,
+				870F342C1CD6F12200C2B094 /* LaunchScreen.storyboard in Resources */,
+				870F34291CD6F12200C2B094 /* Assets.xcassets in Resources */,
+				870F34271CD6F12200C2B094 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		87B3A7561CD6F0AE000DBB70 /* Resources */ = {
+		870F34301CD6F12200C2B094 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		87B3A7611CD6F0AF000DBB70 /* Resources */ = {
+		870F343B1CD6F12200C2B094 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -255,60 +252,59 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		87B3A73D1CD6F0AE000DBB70 /* Sources */ = {
+		870F341A1CD6F12200C2B094 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87B3A74D1CD6F0AE000DBB70 /* Nav.xcdatamodeld in Sources */,
-				87B3A7471CD6F0AE000DBB70 /* ViewController.swift in Sources */,
-				87B3A7451CD6F0AE000DBB70 /* AppDelegate.swift in Sources */,
+				870F34241CD6F12200C2B094 /* ViewController.swift in Sources */,
+				870F34221CD6F12200C2B094 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		87B3A7541CD6F0AE000DBB70 /* Sources */ = {
+		870F342E1CD6F12200C2B094 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87B3A75D1CD6F0AF000DBB70 /* NavTests.swift in Sources */,
+				870F34371CD6F12200C2B094 /* NavTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		87B3A75F1CD6F0AF000DBB70 /* Sources */ = {
+		870F34391CD6F12200C2B094 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87B3A7681CD6F0AF000DBB70 /* NavUITests.swift in Sources */,
+				870F34421CD6F12200C2B094 /* NavUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		87B3A75A1CD6F0AF000DBB70 /* PBXTargetDependency */ = {
+		870F34341CD6F12200C2B094 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 87B3A7401CD6F0AE000DBB70 /* Nav */;
-			targetProxy = 87B3A7591CD6F0AF000DBB70 /* PBXContainerItemProxy */;
+			target = 870F341D1CD6F12200C2B094 /* Nav */;
+			targetProxy = 870F34331CD6F12200C2B094 /* PBXContainerItemProxy */;
 		};
-		87B3A7651CD6F0AF000DBB70 /* PBXTargetDependency */ = {
+		870F343F1CD6F12200C2B094 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 87B3A7401CD6F0AE000DBB70 /* Nav */;
-			targetProxy = 87B3A7641CD6F0AF000DBB70 /* PBXContainerItemProxy */;
+			target = 870F341D1CD6F12200C2B094 /* Nav */;
+			targetProxy = 870F343E1CD6F12200C2B094 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		87B3A7481CD6F0AE000DBB70 /* Main.storyboard */ = {
+		870F34251CD6F12200C2B094 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				87B3A7491CD6F0AE000DBB70 /* Base */,
+				870F34261CD6F12200C2B094 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		87B3A7501CD6F0AE000DBB70 /* LaunchScreen.storyboard */ = {
+		870F342A1CD6F12200C2B094 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				87B3A7511CD6F0AE000DBB70 /* Base */,
+				870F342B1CD6F12200C2B094 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -316,7 +312,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		87B3A76A1CD6F0AF000DBB70 /* Debug */ = {
+		870F34441CD6F12200C2B094 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -362,7 +358,7 @@
 			};
 			name = Debug;
 		};
-		87B3A76B1CD6F0AF000DBB70 /* Release */ = {
+		870F34451CD6F12200C2B094 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -401,7 +397,7 @@
 			};
 			name = Release;
 		};
-		87B3A76D1CD6F0AF000DBB70 /* Debug */ = {
+		870F34471CD6F12200C2B094 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -412,7 +408,7 @@
 			};
 			name = Debug;
 		};
-		87B3A76E1CD6F0AF000DBB70 /* Release */ = {
+		870F34481CD6F12200C2B094 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -423,7 +419,7 @@
 			};
 			name = Release;
 		};
-		87B3A7701CD6F0AF000DBB70 /* Debug */ = {
+		870F344A1CD6F12200C2B094 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -435,7 +431,7 @@
 			};
 			name = Debug;
 		};
-		87B3A7711CD6F0AF000DBB70 /* Release */ = {
+		870F344B1CD6F12200C2B094 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -447,7 +443,7 @@
 			};
 			name = Release;
 		};
-		87B3A7731CD6F0AF000DBB70 /* Debug */ = {
+		870F344D1CD6F12200C2B094 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = NavUITests/Info.plist;
@@ -458,7 +454,7 @@
 			};
 			name = Debug;
 		};
-		87B3A7741CD6F0AF000DBB70 /* Release */ = {
+		870F344E1CD6F12200C2B094 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = NavUITests/Info.plist;
@@ -472,53 +468,40 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		87B3A73C1CD6F0AE000DBB70 /* Build configuration list for PBXProject "Nav" */ = {
+		870F34191CD6F12200C2B094 /* Build configuration list for PBXProject "Nav" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				87B3A76A1CD6F0AF000DBB70 /* Debug */,
-				87B3A76B1CD6F0AF000DBB70 /* Release */,
+				870F34441CD6F12200C2B094 /* Debug */,
+				870F34451CD6F12200C2B094 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		87B3A76C1CD6F0AF000DBB70 /* Build configuration list for PBXNativeTarget "Nav" */ = {
+		870F34461CD6F12200C2B094 /* Build configuration list for PBXNativeTarget "Nav" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				87B3A76D1CD6F0AF000DBB70 /* Debug */,
-				87B3A76E1CD6F0AF000DBB70 /* Release */,
+				870F34471CD6F12200C2B094 /* Debug */,
+				870F34481CD6F12200C2B094 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		87B3A76F1CD6F0AF000DBB70 /* Build configuration list for PBXNativeTarget "NavTests" */ = {
+		870F34491CD6F12200C2B094 /* Build configuration list for PBXNativeTarget "NavTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				87B3A7701CD6F0AF000DBB70 /* Debug */,
-				87B3A7711CD6F0AF000DBB70 /* Release */,
+				870F344A1CD6F12200C2B094 /* Debug */,
+				870F344B1CD6F12200C2B094 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		87B3A7721CD6F0AF000DBB70 /* Build configuration list for PBXNativeTarget "NavUITests" */ = {
+		870F344C1CD6F12200C2B094 /* Build configuration list for PBXNativeTarget "NavUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				87B3A7731CD6F0AF000DBB70 /* Debug */,
-				87B3A7741CD6F0AF000DBB70 /* Release */,
+				870F344D1CD6F12200C2B094 /* Debug */,
+				870F344E1CD6F12200C2B094 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		87B3A74B1CD6F0AE000DBB70 /* Nav.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				87B3A74C1CD6F0AE000DBB70 /* Nav.xcdatamodel */,
-			);
-			currentVersion = 87B3A74C1CD6F0AE000DBB70 /* Nav.xcdatamodel */;
-			path = Nav.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
-	rootObject = 87B3A7391CD6F0AE000DBB70 /* Project object */;
+	rootObject = 870F34161CD6F12200C2B094 /* Project object */;
 }

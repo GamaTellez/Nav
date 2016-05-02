@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "87B3A7401CD6F0AE000DBB70"
+               BlueprintIdentifier = "870F341D1CD6F12200C2B094"
                BuildableName = "Nav.app"
                BlueprintName = "Nav"
                ReferencedContainer = "container:Nav.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "87B3A7571CD6F0AE000DBB70"
+               BlueprintIdentifier = "870F34311CD6F12200C2B094"
                BuildableName = "NavTests.xctest"
                BlueprintName = "NavTests"
                ReferencedContainer = "container:Nav.xcodeproj">
@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "87B3A7621CD6F0AF000DBB70"
+               BlueprintIdentifier = "870F343C1CD6F12200C2B094"
                BuildableName = "NavUITests.xctest"
                BlueprintName = "NavUITests"
                ReferencedContainer = "container:Nav.xcodeproj">
@@ -52,7 +52,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "87B3A7401CD6F0AE000DBB70"
+            BlueprintIdentifier = "870F341D1CD6F12200C2B094"
             BuildableName = "Nav.app"
             BlueprintName = "Nav"
             ReferencedContainer = "container:Nav.xcodeproj">
@@ -75,7 +75,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "87B3A7401CD6F0AE000DBB70"
+            BlueprintIdentifier = "870F341D1CD6F12200C2B094"
             BuildableName = "Nav.app"
             BlueprintName = "Nav"
             ReferencedContainer = "container:Nav.xcodeproj">
@@ -94,7 +94,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "87B3A7401CD6F0AE000DBB70"
+            BlueprintIdentifier = "870F341D1CD6F12200C2B094"
             BuildableName = "Nav.app"
             BlueprintName = "Nav"
             ReferencedContainer = "container:Nav.xcodeproj">
