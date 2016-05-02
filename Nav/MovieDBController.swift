@@ -23,15 +23,16 @@ class MovieDBController: NSObject {
                          completion(result: errorProduced)
                     }
                 } else {
-                    if let response = response as? NSHTTPURLResponse {
-                        if response.statusCode != 200 {
-                            completion(result: response)
-                            print(response.statusCode)
+                    if let httpResponse = response as? NSHTTPURLResponse {
+                        if httpResponse.statusCode != 200 {
+                            completion(result: httpResponse)
+                            //print(response.statusCode)
                         } else {
                             if let jsonData = data {
                                 do {
                                     let jsonObject = try NSJSONSerialization.JSONObjectWithData(jsonData, options: .MutableContainers)
                                     completion(result: jsonObject)
+                                    print(jsonObject)
                                 } catch let error as NSError? {
                                     if let errorFromJson = error {
                                         print(errorFromJson.localizedDescription)

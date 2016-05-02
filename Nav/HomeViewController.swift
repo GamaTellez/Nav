@@ -46,19 +46,32 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         self.searchButton.setTitle("Searching..", forState: .Normal)
         if let textToSearch = self.searchTextField.text {
             MovieDBController.apiController.newMovieSearch(with: textToSearch, completion: { (result) in
-                print(result)
-                if let resultsDictionary = result.objectForKey("results") as? [NSDictionary] {
-                    let moviesFound = self.createMovieObjects(from: resultsDictionary)
-                    if moviesFound.count == 0 {
-                        dispatch_async(dispatch_get_main_queue(), { 
-                          self.alertViewController("No movies found", message: "Please try again for a different title", actionTitle: "Continue")  
-                        })
-                    } else {
-                        if let searchResultsVC = self.storyBoard.instantiateViewControllerWithIdentifier("resultsVC") as? SearchResultsTVController {
-                           searchResultsVC.movieResults = moviesFound
-                            dispatch_async(dispatch_get_main_queue(), { 
-                               self.navigationController?.pushViewController(searchResultsVC, animated: true)
+                    if result.isKindOfClass(NSError) {
+                        if let resultError = result as? NSError {
+                            dispatch_async(dispatch_get_main_queue(), {
+                                self.alertViewController("Oops, something went wrong!", message: resultError.localizedDescription, actionTitle: "Continue")
                             })
+                        }
+                    } else if result.isKindOfClass(NSHTTPURLResponse) {
+                        if let resultResponse = result as? NSHTTPURLResponse {
+                            dispatch_async(dispatch_get_main_queue(), {
+                                self.alertViewController("Oops, something went wrong", message: String(format: "Error: %d", resultResponse.statusCode), actionTitle: "Continue")
+                            })
+                        }
+                    } else {
+                       if let resultsDictionary = result.objectForKey("results") as? [NSDictionary] {
+                            let moviesFound = self.createMovieObjects(from: resultsDictionary)
+                            if moviesFound.count == 0 {
+                                dispatch_async(dispatch_get_main_queue(), {
+                                    self.alertViewController("No movies found", message: "Please try again for a different title", actionTitle: "Continue")
+                                })
+                            } else {
+                                if let searchResultsVC = self.storyBoard.instantiateViewControllerWithIdentifier("resultsVC") as? SearchResultsTVController {
+                                    searchResultsVC.movieResults = moviesFound
+                                    dispatch_async(dispatch_get_main_queue(), {
+                                        self.navigationController?.pushViewController(searchResultsVC, animated: true)
+                                    })
+                                }
                         }
                     }
                 }
