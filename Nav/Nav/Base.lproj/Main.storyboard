@@ -63,7 +63,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" rowHeight="110" id="SU5-9I-aS7">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" rowHeight="110" id="SU5-9I-aS7" customClass="MovieCell" customModule="Nav" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SU5-9I-aS7" id="rmV-Y1-Uhl">
@@ -105,6 +105,11 @@
                                         <constraint firstItem="ncJ-KH-c6h" firstAttribute="trailing" secondItem="H96-q3-Aff" secondAttribute="trailing" id="u4V-nj-4A3"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="movieImage" destination="5zU-Ds-YMk" id="Vle-bH-kty"/>
+                                    <outlet property="movieTitleLabel" destination="ncJ-KH-c6h" id="rB8-cr-KbN"/>
+                                    <outlet property="moviewOverviewLabel" destination="H96-q3-Aff" id="FNa-St-MLS"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

@@ -23,6 +23,9 @@ struct Movie {
             self.title = "No title available"
         }
         if let movieOverview = infoDictionary.valueForKey("overview") as? String {
+            if movieOverview == "" {
+                self.overView = "No overview available"
+            }
             self.overView = movieOverview
         } else {
             self.overView = "No overview available"

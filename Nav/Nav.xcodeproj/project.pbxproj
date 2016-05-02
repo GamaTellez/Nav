@@ -17,6 +17,7 @@
 		870F34561CD6F65800C2B094 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870F34551CD6F65800C2B094 /* HomeViewController.swift */; };
 		87F35FB51CD7B94600CF6EBE /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F35FB41CD7B94600CF6EBE /* Movie.swift */; };
 		87F35FB71CD7BCBD00CF6EBE /* SearchResultsTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F35FB61CD7BCBD00CF6EBE /* SearchResultsTVController.swift */; };
+		87F35FB91CD81CE000CF6EBE /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F35FB81CD81CE000CF6EBE /* MovieCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		870F34551CD6F65800C2B094 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../HomeViewController.swift; sourceTree = "<group>"; };
 		87F35FB41CD7B94600CF6EBE /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		87F35FB61CD7BCBD00CF6EBE /* SearchResultsTVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTVController.swift; sourceTree = "<group>"; };
+		87F35FB81CD81CE000CF6EBE /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				870F34211CD6F12200C2B094 /* AppDelegate.swift */,
 				870F34551CD6F65800C2B094 /* HomeViewController.swift */,
 				87F35FB61CD7BCBD00CF6EBE /* SearchResultsTVController.swift */,
+				87F35FB81CD81CE000CF6EBE /* MovieCell.swift */,
 				870F34281CD6F12200C2B094 /* Assets.xcassets */,
 				870F342A1CD6F12200C2B094 /* LaunchScreen.storyboard */,
 				870F342D1CD6F12200C2B094 /* Info.plist */,
@@ -267,6 +270,7 @@
 			files = (
 				870F34541CD6F5D100C2B094 /* MovieDBController.swift in Sources */,
 				870F34221CD6F12200C2B094 /* AppDelegate.swift in Sources */,
+				87F35FB91CD81CE000CF6EBE /* MovieCell.swift in Sources */,
 				87F35FB71CD7BCBD00CF6EBE /* SearchResultsTVController.swift in Sources */,
 				87F35FB51CD7B94600CF6EBE /* Movie.swift in Sources */,
 				870F34561CD6F65800C2B094 /* HomeViewController.swift in Sources */,
