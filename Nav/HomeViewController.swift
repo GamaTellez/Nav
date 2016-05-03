@@ -11,13 +11,14 @@ import UIKit
 class HomeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var searchTextField: UITextField!
     @IBOutlet var searchButton: UIButton!
-    lazy var storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+    var storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+    var searchingView = UIView()
+    var activityIndicator = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         self.buttonSetUp(self.searchButton)
         self.textFieldSetup(self.searchTextField)
     }
-    
     
     func buttonSetUp(searchButton:UIButton) {
         searchButton.enabled = false
@@ -71,6 +72,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         if self.searchTextField.editing {
             self.searchTextField.resignFirstResponder()
         }
+        self.presentSearchingView()
         self.searchButton.setTitle("Searching...", forState: .Normal)
         self.searchButton.enabled = false
         if let textToSearch = self.searchTextField.text {
@@ -105,6 +107,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
                                     self.navigationController?.pushViewController(searchResultsVC, animated: true)
                                     self.searchTextField.text = ""
                                     self.searchButton.setTitle("Search", forState: .Normal)
+                                    self.removeSearchingView()
                                 })
                             }
                         }
@@ -112,7 +115,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
                 }
             })
         }
-
     }
     
     func createMovieObjects(from resultsDictionary:[NSDictionary]) -> [Movie] {
@@ -126,7 +128,27 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     func alertViewController(title:String, message:String, actionTitle:String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: actionTitle, style: .Default, handler: nil))
+        alert.addAction(UIAlertAction(title: actionTitle, style: .Default, handler: { (action:UIAlertAction) in
+            self.removeSearchingView()
+        }))
         self.navigationController?.presentViewController(alert, animated: true, completion: nil)
     }
+    
+    func presentSearchingView() {
+        self.searchingView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        self.searchingView.backgroundColor = UIColor.grayColor()
+        self.searchingView.alpha = 0.7
+        self.activityIndicator.center = self.searchingView.center
+        self.activityIndicator.activityIndicatorViewStyle = .WhiteLarge
+        self.activityIndicator.startAnimating()
+        self.searchingView.addSubview(self.activityIndicator)
+        self.view.addSubview(self.searchingView)
+    }
+    
+    func removeSearchingView() {
+        self.activityIndicator.stopAnimating()
+        self.activityIndicator.removeFromSuperview()
+        self.searchingView.removeFromSuperview()
+    }
+    
 }

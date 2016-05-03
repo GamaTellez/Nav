@@ -116,7 +116,9 @@ class MovieDetailVC: UIViewController, UIScrollViewDelegate {
                 } else {
                     if let resultsDict = result.objectForKey("results") as? [NSDictionary] {
                         if resultsDict.isEmpty {
-                            self.classAlertViewController("Sorry!", message: "There is no trailer available for this movie", actionTitle: "Continue")
+                            dispatch_async(dispatch_get_main_queue(), { 
+                                self.classAlertViewController("Sorry!", message: "There is no trailer available for this movie", actionTitle: "Continue")
+                            })
                         } else {
                         let infoDict = resultsDict[0]
                         if let trailerKey = infoDict.valueForKey("key") as? String {

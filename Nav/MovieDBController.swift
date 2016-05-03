@@ -22,6 +22,7 @@ class MovieDBController: NSObject {
                     if let errorProduced = error {
                          completion(result: errorProduced)
                     }
+                    completion(result: error!)
                 } else {
                     if let httpResponse = response as? NSHTTPURLResponse {
                         if httpResponse.statusCode != 200 {

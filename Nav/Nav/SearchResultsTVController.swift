@@ -58,7 +58,10 @@ class SearchResultsTVController: UITableViewController {
                     if let rowTapped = self.tableView.indexPathForSelectedRow?.row {
                         let movieTapped = self.movieResults[rowTapped]
                         movieDetailVC.moviewSelected = movieTapped
-                        print(movieTapped)
+                    } else {
+                        let alert = UIAlertController(title: "Oops!", message: "There was an error with the selected moview, please forgive us!", preferredStyle: .Alert)
+                        alert.addAction(UIAlertAction(title: "Continue", style: .Default, handler: nil))
+                        self.navigationController?.presentViewController(alert, animated: true, completion: nil)
                     }
                 }
             }
