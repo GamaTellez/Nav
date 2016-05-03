@@ -34,9 +34,11 @@ struct Movie {
                 if let imageURL = NSURL(string:"https://image.tmdb.org/t/p/w500" + moviePosterPath) {
                     if let imageData = NSData(contentsOfURL: imageURL) {
                         self.image = UIImage(data: imageData)
+                    } else {
+                        self.image = UIImage(named: "film")
                     }
             }
-        if let movieReleaseDate = infoDictionary.valueForKey("release_Date") as? String {
+        if let movieReleaseDate = infoDictionary.valueForKey("release_date") as? String {
             self.releaseDate = movieReleaseDate
         } else {
             self.releaseDate = "No realease date available"

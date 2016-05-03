@@ -12,6 +12,11 @@ class SearchResultsTVController: UITableViewController {
     var movieResults:[Movie] = []
     let cellID = "movieCell"
     
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.movieResults.count
     }
@@ -40,11 +45,24 @@ class SearchResultsTVController: UITableViewController {
         } else {
             return UITableViewCell()
         }
-        
     }
-    
+
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 150
     }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let segueID = segue.identifier {
+            if segueID == "movieDetail" {
+                if let movieDetailVC = segue.destinationViewController as? MovieDetailVC {
+                    if let rowTapped = self.tableView.indexPathForSelectedRow?.row {
+                        let movieTapped = self.movieResults[rowTapped]
+                        movieDetailVC.moviewSelected = movieTapped
+                    }
+                }
+            }
+        }
+    }
     
 }
+

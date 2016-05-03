@@ -14,7 +14,7 @@ class MovieDBController: NSObject {
     let session = NSURLSession.sharedSession()
 
     func newMovieSearch(with movieName:String, completion: (result:AnyObject) -> Void) {
-        let formattedMovieName = movieName.stringByReplacingOccurrencesOfString(" ", withString: "_")
+        let formattedMovieName = movieName.stringByReplacingOccurrencesOfString(" ", withString: "+")
         if let movieSearchURL = NSURL(string: "https://api.themoviedb.org/3/search/movie?api_key=" + self.APIKey + "&query=" + formattedMovieName) {
             let dataTask = self.session.dataTaskWithURL(movieSearchURL, completionHandler: { (data:NSData?, response:NSURLResponse?, error:NSError?) in
                 if (error != nil) {
