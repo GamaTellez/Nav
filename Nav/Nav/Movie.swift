@@ -11,10 +11,10 @@ import Foundation
 struct Movie {
     var title:String?
     var overView:String?
-    var posterPath:String?
     var releaseDate:String?
     var votesAverage:Int?
     var votesCount:Int?
+    var posterData:NSData?
     
     init(from infoDictionary:NSDictionary) {
         if let movieTitle = infoDictionary.valueForKey("title") as? String {
@@ -31,10 +31,11 @@ struct Movie {
             self.overView = "No overview available"
         }
         if let moviePosterPath = infoDictionary.valueForKey("poster_path") as? String {
-            self.posterPath = moviePosterPath
-        } else {
-            self.posterPath = nil
-        }
+                if let imageURL = NSURL(string:"https://image.tmdb.org/t/p/w500" + moviePosterPath) {
+                    if let imageData = NSData(contentsOfURL: imageURL) {
+                        self.posterData = imageData
+                    }
+            }
         if let movieReleaseDate = infoDictionary.valueForKey("release_Date") as? String {
             self.releaseDate = movieReleaseDate
         } else {
@@ -51,4 +52,5 @@ struct Movie {
             self.votesCount = 0
         }
      }
+    }
 }
