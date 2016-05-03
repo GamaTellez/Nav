@@ -33,8 +33,8 @@ class SearchResultsTVController: UITableViewController {
             } else {
                 cell.moviewOverviewLabel.text = "No overview available"
             }
-            if let imageData = movieAtIndex.posterData {
-                cell.movieImage.image = UIImage(data: imageData)
+            if let image = movieAtIndex.image {
+                cell.movieImage.image = image
             }
             return cell
         } else {
