@@ -20,6 +20,16 @@ class MovieDetailVC: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpViews()
+        self.addReturnBarButtonItem()
+    }
+    
+    func addReturnBarButtonItem(){
+        let returnHome = UIBarButtonItem(title: "New Search", style: .Plain, target: self, action: #selector(MovieDetailVC.returnToHomeView))
+        self.navigationItem.rightBarButtonItem = returnHome
+    }
+    
+    func returnToHomeView() {
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     func setUpViews() {
@@ -56,7 +66,7 @@ class MovieDetailVC: UIViewController, UIScrollViewDelegate {
         scrollView.addSubview(ratingView)
         
         //ReleaseDateLabel
-        let releaseDateLabel = UILabel(frame: CGRect(x: 0, y: movieImageView.frame.height +  ratingView.frame.height + 20, width: self.view.frame.width, height: 50))
+        let releaseDateLabel = UILabel(frame: CGRect(x: 0, y: movieImageView.frame.height +  ratingView.frame.height + 30, width: self.view.frame.width, height: 30))
         releaseDateLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 18)
         if let movieReleaseDate = self.moviewSelected?.releaseDate {
             releaseDateLabel.text = String(format: "Release date: %@",movieReleaseDate)
@@ -64,12 +74,17 @@ class MovieDetailVC: UIViewController, UIScrollViewDelegate {
         scrollView.addSubview(releaseDateLabel)
         
         //TrailerButton
-        let viewTrailerButton = UIButton(frame: CGRect(x: 0, y: releaseDateLabel.frame.height + 30 + movieImageView.frame.height + ratingView.frame.height , width: self.view.frame.width, height: 50))
+        let viewTrailerButton = UIButton(frame: CGRect(x: 10, y: releaseDateLabel.frame.height + 35 + movieImageView.frame.height + ratingView.frame.height , width: self.view.frame.width - 20, height: 30))
         viewTrailerButton.setTitle("View Trailer", forState: .Normal)
+        viewTrailerButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        viewTrailerButton.layer.cornerRadius = 5
+        viewTrailerButton.layer.borderColor = UIColor.blackColor().CGColor
+        viewTrailerButton.layer.borderWidth = 1
+        viewTrailerButton.addTarget(self, action: #selector(MovieDetailVC.viewTrailerButtonTapped), forControlEvents: .TouchUpInside)
         scrollView.addSubview(viewTrailerButton)
         
         //SynopsisLabel
-        let synopsisLabel = UILabel(frame: CGRect(x: 0, y: movieImageView.frame.height + releaseDateLabel.frame.height + viewTrailerButton.frame.height + ratingView.frame.height + 40 , width: self.view.frame.width, height: 300))
+        let synopsisLabel = UILabel(frame: CGRect(x: 0, y: movieImageView.frame.height + releaseDateLabel.frame.height + viewTrailerButton.frame.height + ratingView.frame.height + 45 , width: self.view.frame.width, height: 300))
         synopsisLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 18)
         if let movieSummary = self.moviewSelected?.overView {
             let paragraphStyle = NSMutableParagraphStyle()
@@ -83,4 +98,54 @@ class MovieDetailVC: UIViewController, UIScrollViewDelegate {
         scrollView.contentSize = CGSize(width: self.view.frame.width, height: movieImageView.frame.height + releaseDateLabel.frame.height + viewTrailerButton.frame.height + synopsisLabel.frame.height + ratingView.frame.height + 60)
     }
     
+    func viewTrailerButtonTapped() {
+        if let movieID = self.moviewSelected?.movieID {
+            MovieDBController.apiController.getMovieTrailer(String(format:"%d", movieID), completion: { (result) in
+                if result.isKindOfClass(NSError) {
+                    if let resultError = result as? NSError {
+                        dispatch_async(dispatch_get_main_queue(), {
+                            self.classAlertViewController("Oops, something went wrong!", message: resultError.localizedDescription, actionTitle: "Continue")
+                        })
+                    }
+                } else if result.isKindOfClass(NSHTTPURLResponse) {
+                    if let resultResponse = result as? NSHTTPURLResponse {
+                        dispatch_async(dispatch_get_main_queue(), {
+                            self.classAlertViewController("Oops, something went wrong", message: String(format: "Error: %d", resultResponse.statusCode), actionTitle: "Continue")
+                        })
+                    }
+                } else {
+                    if let resultsDict = result.objectForKey("results") as? [NSDictionary] {
+                        if resultsDict.isEmpty {
+                            self.classAlertViewController("Sorry!", message: "There is no trailer available for this movie", actionTitle: "Continue")
+                        } else {
+                        let infoDict = resultsDict[0]
+                        if let trailerKey = infoDict.valueForKey("key") as? String {
+                            if let trailerSite = infoDict.valueForKey("site") as? String {
+                             self.playTrailer(trailerKey, trailerSite: trailerSite)
+                                }
+                            }
+                        }
+                    }
+                }
+            })
+        }
+    }
+    
+    func playTrailer(trailerKey:String, trailerSite:String) {
+        switch trailerSite {
+            case "YouTube":
+                if let trailerURL = NSURL(string: "https://www.youtube.com/watch?v=" + trailerKey) {
+                UIApplication.sharedApplication().openURL(trailerURL)
+            }
+            default:
+                print(trailerSite)
+            break
+        }
+    }
+    
+    func classAlertViewController(title:String, message:String, actionTitle:String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: actionTitle, style: .Default, handler: nil))
+        self.navigationController?.presentViewController(alert, animated: true, completion: nil)
+        }
 }

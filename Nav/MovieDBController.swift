@@ -10,7 +10,7 @@ import UIKit
 
 class MovieDBController: NSObject {
     static let apiController = MovieDBController()
-    let APIKey = "0a6edf6d1edad4c700d2b8af3b6707cb"
+    private let APIKey = "0a6edf6d1edad4c700d2b8af3b6707cb"
     let session = NSURLSession.sharedSession()
 
     func newMovieSearch(with movieName:String, completion: (result:AnyObject) -> Void) {
@@ -32,7 +32,7 @@ class MovieDBController: NSObject {
                                 do {
                                     let jsonObject = try NSJSONSerialization.JSONObjectWithData(jsonData, options: .MutableContainers)
                                     completion(result: jsonObject)
-                                    print(jsonObject)
+                                   //print(jsonObject)
                                 } catch let error as NSError? {
                                     if let errorFromJson = error {
                                         print(errorFromJson.localizedDescription)
@@ -46,6 +46,37 @@ class MovieDBController: NSObject {
                 }
             })
             dataTask.resume()
+        }
+    }
+    
+    func getMovieTrailer(movieID:String, completion:(result:AnyObject)-> Void) {
+        if let trailerURL = NSURL(string: "http://api.themoviedb.org/3/movie/" + movieID + "/videos?api_key=" + self.APIKey) {
+            let trailerDataTask = self.session.dataTaskWithURL(trailerURL, completionHandler: { (data:NSData?, response:NSURLResponse?, error:NSError?) in
+                if (error != nil) {
+                  //  print(error?.localizedDescription)
+                    if let errorProduced = error {
+                        completion(result: errorProduced)
+                    }
+                } else {
+                    if let httpResponse = response as? NSHTTPURLResponse {
+                        if httpResponse.statusCode != 200 {
+                            completion(result: httpResponse)
+                        } else {
+                            if let jsonData = data {
+                                do {
+                                    let jsonObj = try NSJSONSerialization.JSONObjectWithData(jsonData, options: .MutableContainers)
+                                   // print(jsonObj)
+                                    completion(result: jsonObj)
+                                } catch let errorSerialization as NSError {
+                                    print(errorSerialization.localizedDescription)
+                                    completion(result: errorSerialization)
+                                    }
+                                }
+                            }
+                        }
+                    }
+            })
+              trailerDataTask.resume()
         }
     }
 }

@@ -58,6 +58,7 @@ class SearchResultsTVController: UITableViewController {
                     if let rowTapped = self.tableView.indexPathForSelectedRow?.row {
                         let movieTapped = self.movieResults[rowTapped]
                         movieDetailVC.moviewSelected = movieTapped
+                        print(movieTapped)
                     }
                 }
             }

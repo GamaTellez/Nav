@@ -13,6 +13,7 @@ struct Movie {
     var overView:String?
     var releaseDate:String?
     var votesAverage:Int?
+    var movieID:Int?
     //var votesCount:Int?
     var image:UIImage?
     
@@ -35,24 +36,27 @@ struct Movie {
                     if let imageData = NSData(contentsOfURL: imageURL) {
                         self.image = UIImage(data: imageData)
                     } else {
-                        self.image = UIImage(named: "film")
+                        //print("no image available);
                     }
             }
+        } else {
+            self.image = UIImage(named: "film")
+        }
+        
         if let movieReleaseDate = infoDictionary.valueForKey("release_date") as? String {
             self.releaseDate = movieReleaseDate
         } else {
             self.releaseDate = "No realease date available"
         }
+        
         if let movieVotesAverage = infoDictionary.valueForKey("vote_average") as? Int {
             self.votesAverage = movieVotesAverage
         } else {
             self.votesAverage = 0
         }
-//        if let movieVotesTotal = infoDictionary.valueForKey("vote_count") as? Int {
-//            self.votesCount = movieVotesTotal
-//        } else {
-//            self.votesCount = 0
-//        }
-     }
+        
+        if let movieid = infoDictionary.valueForKey("id") as? Int {
+                self.movieID = movieid
+        }
     }
 }
