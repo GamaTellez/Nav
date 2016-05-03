@@ -13,7 +13,7 @@ struct Movie {
     var overView:String?
     var releaseDate:String?
     var votesAverage:Int?
-    var votesCount:Int?
+    //var votesCount:Int?
     var image:UIImage?
     
     init(from infoDictionary:NSDictionary) {
@@ -48,11 +48,11 @@ struct Movie {
         } else {
             self.votesAverage = 0
         }
-        if let movieVotesTotal = infoDictionary.valueForKey("vote_count") as? Int {
-            self.votesCount = movieVotesTotal
-        } else {
-            self.votesCount = 0
-        }
+//        if let movieVotesTotal = infoDictionary.valueForKey("vote_count") as? Int {
+//            self.votesCount = movieVotesTotal
+//        } else {
+//            self.votesCount = 0
+//        }
      }
     }
 }

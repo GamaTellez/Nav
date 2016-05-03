@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Cosmos
 
 class MovieDetailVC: UIViewController, UIScrollViewDelegate {
     var moviewSelected:Movie?
@@ -29,35 +30,57 @@ class MovieDetailVC: UIViewController, UIScrollViewDelegate {
         scrollView.delegate = self
         self.view.addSubview(scrollView)
         
-        let movieImageView = UIImageView(frame: CGRect(x: 0, y:0, width: self.view.frame.width, height: 400))
-        movieImageView.contentMode = UIViewContentMode.Redraw
-        if let movieImage = self.moviewSelected?.image {
-            movieImageView.image = movieImage
+        //ImageView
+        let movieImageView = UIImageView()
+      if let moviePoster = self.moviewSelected?.image {
+            movieImageView.frame = CGRect(x: 0, y: 0, width: moviePoster.size.width, height: 400)
+            movieImageView.center.x = self.view.frame.width / 2
+            movieImageView.image = moviePoster
+            movieImageView.contentMode = .Top
+            movieImageView.clipsToBounds = true
         }
         scrollView.addSubview(movieImageView)
         
-        let releaseDateLabel = UILabel(frame: CGRect(x: 0, y: movieImageView.frame.height + 10, width: self.view.frame.width, height: 50))
-        releaseDateLabel.backgroundColor = UIColor.greenColor()
+        //star rating view
+        let ratingView = CosmosView(frame: CGRect(x: 0, y: movieImageView.frame.height + 10, width: self.view.frame.width, height: 50))
+        ratingView.settings.totalStars = 10
+        ratingView.settings.fillMode = .Precise
+        ratingView.settings.starSize = 32
+        ratingView.settings.filledColor = UIColor.yellowColor()
+        ratingView.settings.updateOnTouch = false
+        if let totalStars = self.moviewSelected?.votesAverage {
+            ratingView.rating = Double(totalStars)
+        } else {
+            ratingView.rating = 0
+        }
+        scrollView.addSubview(ratingView)
+        
+        //ReleaseDateLabel
+        let releaseDateLabel = UILabel(frame: CGRect(x: 0, y: movieImageView.frame.height +  ratingView.frame.height + 20, width: self.view.frame.width, height: 50))
+        releaseDateLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 18)
         if let movieReleaseDate = self.moviewSelected?.releaseDate {
             releaseDateLabel.text = String(format: "Release date: %@",movieReleaseDate)
         }
         scrollView.addSubview(releaseDateLabel)
         
-        let viewTrailerButton = UIButton(frame: CGRect(x: 0, y: releaseDateLabel.frame.height + 20 + movieImageView.frame.height, width: self.view.frame.width, height: 50))
+        //TrailerButton
+        let viewTrailerButton = UIButton(frame: CGRect(x: 0, y: releaseDateLabel.frame.height + 30 + movieImageView.frame.height + ratingView.frame.height , width: self.view.frame.width, height: 50))
         viewTrailerButton.setTitle("View Trailer", forState: .Normal)
-        viewTrailerButton.backgroundColor = UIColor.blueColor()
         scrollView.addSubview(viewTrailerButton)
-       
-        let synopsisLabel = UILabel(frame: CGRect(x: 0, y: movieImageView.frame.height + 10 + releaseDateLabel.frame.height + viewTrailerButton.frame.height + 10 , width: self.view.frame.width, height: 300))
-        if let movieSummary = self.moviewSelected?.overView {
-            synopsisLabel.text = String(format: "Synopsys:\n\n %@", movieSummary)
-            synopsisLabel.numberOfLines = 0
-            synopsisLabel.textAlignment = .Center
-        }
-        scrollView.addSubview(synopsisLabel)
         
-        scrollView.contentSize = CGSize(width: self.view.frame.width, height: movieImageView.frame.height + releaseDateLabel.frame.height + viewTrailerButton.frame.height + synopsisLabel.frame.height + 30)
-
+        //SynopsisLabel
+        let synopsisLabel = UILabel(frame: CGRect(x: 0, y: movieImageView.frame.height + releaseDateLabel.frame.height + viewTrailerButton.frame.height + ratingView.frame.height + 40 , width: self.view.frame.width, height: 300))
+        synopsisLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 18)
+        if let movieSummary = self.moviewSelected?.overView {
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineSpacing = 10
+            paragraphStyle.alignment = .Center
+            synopsisLabel.attributedText = NSAttributedString(string: String(format: "Synopsys:\n %@", movieSummary), attributes: [NSParagraphStyleAttributeName:paragraphStyle])
+            synopsisLabel.numberOfLines = 0
+            synopsisLabel.sizeToFit()
+            }
+        scrollView.addSubview(synopsisLabel)
+        scrollView.contentSize = CGSize(width: self.view.frame.width, height: movieImageView.frame.height + releaseDateLabel.frame.height + viewTrailerButton.frame.height + synopsisLabel.frame.height + ratingView.frame.height + 60)
     }
     
 }
