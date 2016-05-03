@@ -82,7 +82,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
                         dispatch_async(dispatch_get_main_queue(), {
                             self.alertViewController("Oops, something went wrong!", message: resultError.localizedDescription, actionTitle: "Continue")
                             self.searchButton.setTitle("Search", forState: .Normal)
-
                         })
                     }
                 } else if result.isKindOfClass(NSHTTPURLResponse) {
@@ -107,6 +106,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
                                     self.navigationController?.pushViewController(searchResultsVC, animated: true)
                                     self.searchTextField.text = ""
                                     self.searchButton.setTitle("Search", forState: .Normal)
+                                    self.searchButton.layer.borderColor = UIColor.grayColor().CGColor
                                     self.removeSearchingView()
                                 })
                             }

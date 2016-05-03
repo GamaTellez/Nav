@@ -11,11 +11,6 @@ import Cosmos
 
 class MovieDetailVC: UIViewController, UIScrollViewDelegate {
     var moviewSelected:Movie?
-//    @IBOutlet var movieImage: UIImageView!
-//    @IBOutlet var movieReleaseDateLabel: UILabel!
-//    @IBOutlet var movieOverviewTextview: UITextView!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -140,6 +135,7 @@ class MovieDetailVC: UIViewController, UIScrollViewDelegate {
                 UIApplication.sharedApplication().openURL(trailerURL)
             }
             default:
+                //no other sites were found
                 print(trailerSite)
             break
         }

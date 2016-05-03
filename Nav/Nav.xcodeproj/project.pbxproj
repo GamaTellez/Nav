@@ -115,12 +115,10 @@
 			isa = PBXGroup;
 			children = (
 				870F34251CD6F12200C2B094 /* Main.storyboard */,
+				870F34211CD6F12200C2B094 /* AppDelegate.swift */,
 				870F34531CD6F5D100C2B094 /* MovieDBController.swift */,
 				87685B151CD8385200B944F9 /* Objects */,
-				870F34211CD6F12200C2B094 /* AppDelegate.swift */,
-				870F34551CD6F65800C2B094 /* HomeViewController.swift */,
-				87685B141CD8383600B944F9 /* SearchResultsVC */,
-				87685B1C1CD83DE900B944F9 /* DetailVCs */,
+				87685B141CD8383600B944F9 /* ViewControlles */,
 				870F34281CD6F12200C2B094 /* Assets.xcassets */,
 				870F342A1CD6F12200C2B094 /* LaunchScreen.storyboard */,
 				870F342D1CD6F12200C2B094 /* Info.plist */,
@@ -146,13 +144,15 @@
 			path = NavUITests;
 			sourceTree = "<group>";
 		};
-		87685B141CD8383600B944F9 /* SearchResultsVC */ = {
+		87685B141CD8383600B944F9 /* ViewControlles */ = {
 			isa = PBXGroup;
 			children = (
+				870F34551CD6F65800C2B094 /* HomeViewController.swift */,
 				87F35FB61CD7BCBD00CF6EBE /* SearchResultsTVController.swift */,
 				87F35FB81CD81CE000CF6EBE /* MovieCell.swift */,
+				87685B251CD84B4100B944F9 /* MovieDetailVC.swift */,
 			);
-			name = SearchResultsVC;
+			name = ViewControlles;
 			sourceTree = "<group>";
 		};
 		87685B151CD8385200B944F9 /* Objects */ = {
@@ -161,14 +161,6 @@
 				87F35FB41CD7B94600CF6EBE /* Movie.swift */,
 			);
 			name = Objects;
-			sourceTree = "<group>";
-		};
-		87685B1C1CD83DE900B944F9 /* DetailVCs */ = {
-			isa = PBXGroup;
-			children = (
-				87685B251CD84B4100B944F9 /* MovieDetailVC.swift */,
-			);
-			name = DetailVCs;
 			sourceTree = "<group>";
 		};
 		9059ADEFFEA29FBA97CC9BE7 /* Frameworks */ = {

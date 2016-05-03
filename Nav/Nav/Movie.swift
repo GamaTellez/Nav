@@ -14,7 +14,6 @@ struct Movie {
     var releaseDate:String?
     var votesAverage:Int?
     var movieID:Int?
-    //var votesCount:Int?
     var image:UIImage?
     
     init(from infoDictionary:NSDictionary) {
@@ -42,19 +41,16 @@ struct Movie {
         } else {
             self.image = UIImage(named: "film")
         }
-        
         if let movieReleaseDate = infoDictionary.valueForKey("release_date") as? String {
             self.releaseDate = movieReleaseDate
         } else {
             self.releaseDate = "No realease date available"
         }
-        
         if let movieVotesAverage = infoDictionary.valueForKey("vote_average") as? Int {
             self.votesAverage = movieVotesAverage
         } else {
             self.votesAverage = 0
         }
-        
         if let movieid = infoDictionary.valueForKey("id") as? Int {
                 self.movieID = movieid
         }
