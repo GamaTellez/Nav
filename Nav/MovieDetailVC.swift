@@ -37,13 +37,18 @@ class MovieDetailVC: UIViewController, UIScrollViewDelegate {
         
         //ImageView
         let movieImageView = UIImageView()
-      if let moviePoster = self.moviewSelected?.image {
-            movieImageView.frame = CGRect(x: 0, y: 0, width: moviePoster.size.width, height: 400)
-            movieImageView.center.x = self.view.frame.width / 2
-            movieImageView.image = moviePoster
-            movieImageView.contentMode = .Top
-            movieImageView.clipsToBounds = true
+        if let movieURL = self.moviewSelected?.urlForImage {
+            if let imageData = NSData(contentsOfURL: movieURL) {
+                if let image = UIImage(data: imageData) {
+                    movieImageView.image = image
+                    movieImageView.frame = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
+                    movieImageView.center.x = self.view.frame.width / 2
+                    movieImageView.contentMode = .Top
+                    movieImageView.clipsToBounds = true
+                }
+            }
         }
+
         scrollView.addSubview(movieImageView)
         
         //star rating view
@@ -98,22 +103,16 @@ class MovieDetailVC: UIViewController, UIScrollViewDelegate {
             MovieDBController.apiController.getMovieTrailer(String(format:"%d", movieID), completion: { (result) in
                 if result.isKindOfClass(NSError) {
                     if let resultError = result as? NSError {
-                        dispatch_async(dispatch_get_main_queue(), {
                             self.classAlertViewController("Oops, something went wrong!", message: resultError.localizedDescription, actionTitle: "Continue")
-                        })
                     }
                 } else if result.isKindOfClass(NSHTTPURLResponse) {
                     if let resultResponse = result as? NSHTTPURLResponse {
-                        dispatch_async(dispatch_get_main_queue(), {
                             self.classAlertViewController("Oops, something went wrong", message: String(format: "Error: %d", resultResponse.statusCode), actionTitle: "Continue")
-                        })
                     }
                 } else {
                     if let resultsDict = result.objectForKey("results") as? [NSDictionary] {
                         if resultsDict.isEmpty {
-                            dispatch_async(dispatch_get_main_queue(), { 
                                 self.classAlertViewController("Sorry!", message: "There is no trailer available for this movie", actionTitle: "Continue")
-                            })
                         } else {
                         let infoDict = resultsDict[0]
                         if let trailerKey = infoDict.valueForKey("key") as? String {
@@ -144,6 +143,8 @@ class MovieDetailVC: UIViewController, UIScrollViewDelegate {
     func classAlertViewController(title:String, message:String, actionTitle:String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: actionTitle, style: .Default, handler: nil))
-        self.navigationController?.presentViewController(alert, animated: true, completion: nil)
+        dispatch_async(dispatch_get_main_queue()) { 
+         self.navigationController?.presentViewController(alert, animated: true, completion: nil)
         }
+    }
 }

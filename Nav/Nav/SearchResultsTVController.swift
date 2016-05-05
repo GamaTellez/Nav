@@ -26,8 +26,9 @@ class SearchResultsTVController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCellWithIdentifier(self.cellID) as? MovieCell {
-            let movieAtIndex = movieResults[indexPath.row]
+        //if let cell = tableView.dequeueReusableCellWithIdentifier(self.cellID) as? MovieCell {
+        if let cell = tableView.dequeueReusableCellWithIdentifier(self.cellID, forIndexPath: indexPath) as? MovieCell {
+        let movieAtIndex = movieResults[indexPath.row]
             if let movieTitle = movieAtIndex.title {
                 cell.movieTitleLabel.text = movieTitle
             } else {
@@ -38,9 +39,21 @@ class SearchResultsTVController: UITableViewController {
             } else {
                 cell.moviewOverviewLabel.text = "No overview available"
             }
-            if let image = movieAtIndex.image {
-                cell.movieImage.image = image
-            }
+            cell.movieImage.image = UIImage(named: "film")
+            if let imageURL = movieAtIndex.urlForImage {
+                //cell.movieImage.image = image
+                //set the image holder temporaly until the actual picture is obtained
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { 
+                        if let imageData = NSData(contentsOfURL: imageURL) {
+                            if let movieImage = UIImage(data: imageData) {
+                                dispatch_async(dispatch_get_main_queue(), {
+                                  cell.movieImage.image = movieImage
+                                })
+                            }
+                        }
+                    })
+                    } else {
+                }
             return cell
         } else {
             return UITableViewCell()

@@ -14,8 +14,7 @@ struct Movie {
     var releaseDate:String?
     var votesAverage:Int?
     var movieID:Int?
-    var image:UIImage?
-    
+    var urlForImage:NSURL?
     init(from infoDictionary:NSDictionary) {
         if let movieTitle = infoDictionary.valueForKey("title") as? String {
             self.title = movieTitle
@@ -32,15 +31,17 @@ struct Movie {
         }
         if let moviePosterPath = infoDictionary.valueForKey("poster_path") as? String {
                 if let imageURL = NSURL(string:"https://image.tmdb.org/t/p/w500" + moviePosterPath) {
-                    if let imageData = NSData(contentsOfURL: imageURL) {
-                        self.image = UIImage(data: imageData)
-                    } else {
+                    //if let imageData = NSData(contentsOfURL: imageURL) {
+                      //  self.image = UIImage(data: imageData)
+                    //} else {
                         //print("no image available);
-                    }
+              //      }
+                    self.urlForImage = imageURL
             }
-        } else {
-            self.image = UIImage(named: "film")
         }
+//        else {
+//            self.image = UIImage(named: "film")
+//        }
         if let movieReleaseDate = infoDictionary.valueForKey("release_date") as? String {
             self.releaseDate = movieReleaseDate
         } else {
